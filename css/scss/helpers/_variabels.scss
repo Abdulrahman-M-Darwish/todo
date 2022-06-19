@@ -1,0 +1,26 @@
+// ### Primary
+
+$BrightBlue: hsl(220, 98%, 61%);
+$CheckBackground: linear-gradient(
+  140deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+
+// ### Light Theme
+
+$VeryLightGray: hsl(0, 0%, 98%);
+$VeryLightGrayishBlue: hsl(236, 33%, 92%);
+$LightGrayishBlue1: hsl(233, 11%, 84%);
+$DarkGrayishBlue1: hsl(236, 9%, 61%);
+$VeryDarkGrayishBlue1: hsl(235, 19%, 35%);
+
+// ### Dark Theme
+
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$LightGrayishBlue2: hsl(234, 39%, 85%);
+$LightGrayishBlue3: hsl(236, 33%, 92%); // (hover)
+$DarkGrayishBlue2: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlue2: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue3: hsl(237, 14%, 26%);

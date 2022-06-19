@@ -1,0 +1,142 @@
+.background {
+  height: 200px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  @include minMedia(576) {
+    height: 300px;
+  }
+}
+
+.todo {
+  padding: 50px 24px;
+  .container {
+    max-width: 550px;
+    margin: auto;
+    .header {
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 10px;
+      }
+      img {
+        cursor: pointer;
+      }
+    }
+    form {
+      margin: 32px 0 16px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        left: 16px;
+        border: 1px solid $VeryDarkGrayishBlue3;
+      }
+      input {
+        border: none;
+        outline: none;
+        padding: 16px 0px 16px 52px;
+        width: 100%;
+        border-radius: 6px;
+        caret-color: $BrightBlue;
+        font-size: 18px;
+      }
+    }
+    .tasks {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      overflow: hidden;
+      .task {
+        padding: 16px;
+        gap: 16px;
+        transition: 0.5s;
+        transform-origin: left;
+        &:hover {
+          .close {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .close {
+          transition: 0.3s;
+          transform: translateX(-10px);
+          opacity: 0;
+          cursor: pointer;
+          img {
+            pointer-events: none;
+          }
+        }
+        p {
+          transition: 0.3s;
+          margin-right: auto;
+        }
+        .check {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid $VeryDarkGrayishBlue3;
+          transition: 0.2s;
+          cursor: pointer;
+          &:hover {
+            border-color: $BrightBlue;
+          }
+          img {
+            transition: 0.2s;
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+          }
+        }
+        &.active {
+          p {
+            text-decoration: line-through;
+          }
+          .check {
+            img {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            background-image: $CheckBackground;
+          }
+        }
+        &.close {
+          transform: translateX(100%) rotate(10deg) translateY(-3rem);
+        }
+      }
+    }
+    .dashboard {
+      padding: 16px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      position: relative;
+      .filters {
+        background-color: inherit;
+        gap: 16px;
+        button {
+          font-size: 1em;
+          font-weight: 700;
+          &.active {
+            color: $BrightBlue;
+          }
+        }
+        @include maxMedia(578) {
+          position: absolute;
+          left: 0;
+          bottom: calc(-100% + -16px);
+          width: 100%;
+          padding: 16px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

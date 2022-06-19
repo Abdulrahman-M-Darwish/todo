@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  overflow-x: hidden; }
+
+button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  color: inherit;
+  cursor: pointer; }
+
+.flex {
+  display: flex; }
+
+.flex-col {
+  flex-direction: column; }
+
+.justify-between {
+  justify-content: space-between; }
+
+.justify-center {
+  justify-content: center; }
+
+.items-center {
+  align-items: center; }
+
+.background {
+  height: 200px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; }
+  @media screen and (min-width: 576px) {
+    .background {
+      height: 300px; } }
+
+.todo {
+  padding: 50px 24px; }
+  .todo .container {
+    max-width: 550px;
+    margin: auto; }
+    .todo .container .header h1 {
+      text-transform: uppercase;
+      letter-spacing: 10px; }
+    .todo .container .header img {
+      cursor: pointer; }
+    .todo .container form {
+      margin: 32px 0 16px;
+      position: relative; }
+      .todo .container form::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        left: 16px;
+        border: 1px solid #393a4c; }
+      .todo .container form input {
+        border: none;
+        outline: none;
+        padding: 16px 0px 16px 52px;
+        width: 100%;
+        border-radius: 6px;
+        caret-color: #3a7bfd;
+        font-size: 18px; }
+    .todo .container .tasks {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      overflow: hidden; }
+      .todo .container .tasks .task {
+        padding: 16px;
+        gap: 16px;
+        transition: 0.5s;
+        transform-origin: left; }
+        .todo .container .tasks .task:hover .close {
+          opacity: 1;
+          transform: translateX(0); }
+        .todo .container .tasks .task .close {
+          transition: 0.3s;
+          transform: translateX(-10px);
+          opacity: 0;
+          cursor: pointer; }
+          .todo .container .tasks .task .close img {
+            pointer-events: none; }
+        .todo .container .tasks .task p {
+          transition: 0.3s;
+          margin-right: auto; }
+        .todo .container .tasks .task .check {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid #393a4c;
+          transition: 0.2s;
+          cursor: pointer; }
+          .todo .container .tasks .task .check:hover {
+            border-color: #3a7bfd; }
+          .todo .container .tasks .task .check img {
+            transition: 0.2s;
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none; }
+        .todo .container .tasks .task.active p {
+          text-decoration: line-through; }
+        .todo .container .tasks .task.active .check {
+          background-image: linear-gradient(140deg, #57ddff, #c058f3); }
+          .todo .container .tasks .task.active .check img {
+            opacity: 1;
+            transform: translateY(0); }
+        .todo .container .tasks .task.close {
+          transform: translateX(100%) rotate(10deg) translateY(-3rem); }
+    .todo .container .dashboard {
+      padding: 16px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      position: relative; }
+      .todo .container .dashboard .filters {
+        background-color: inherit;
+        gap: 16px; }
+        .todo .container .dashboard .filters button {
+          font-size: 1em;
+          font-weight: 700; }
+          .todo .container .dashboard .filters button.active {
+            color: #3a7bfd; }
+        @media screen and (max-width: 578px) {
+          .todo .container .dashboard .filters {
+            position: absolute;
+            left: 0;
+            bottom: calc(-100% + -16px);
+            width: 100%;
+            padding: 16px;
+            display: flex;
+            justify-content: center; } }
+
+body.dark {
+  background-color: #161722; }
+  body.dark .hover-white {
+    transition: 0.3s; }
+    body.dark .hover-white:hover {
+      color: #e4e5f1; }
+  body.dark .background {
+    background-image: url("../images/bg-mobile-dark.jpg"); }
+    @media screen and (min-width: 576px) {
+      body.dark .background {
+        background-image: url("../images/bg-desktop-dark.jpg"); } }
+  body.dark h1 {
+    color: white; }
+  body.dark form input {
+    background-color: #25273c;
+    color: #cacde8; }
+  body.dark .tasks .task {
+    background-color: #25273c;
+    border-bottom: 1px solid #393a4c; }
+    body.dark .tasks .task:hover p {
+      color: #e4e5f1; }
+    body.dark .tasks .task p {
+      color: #cacde8; }
+    body.dark .tasks .task.active p {
+      color: #393a4c; }
+  body.dark .dashboard {
+    background-color: #25273c;
+    color: #4d5066; }
+
+body.light {
+  background-color: #fafafa; }
+  body.light .hover-white {
+    transition: 0.3s; }
+    body.light .hover-white:hover {
+      color: #484b6a; }
+  body.light .background {
+    background-image: url("../images/bg-mobile-light.jpg"); }
+    @media screen and (min-width: 576px) {
+      body.light .background {
+        background-image: url("../images/bg-desktop-light.jpg"); } }
+  body.light h1 {
+    color: white; }
+  body.light form input {
+    background-color: white;
+    color: #484b6a; }
+  body.light form::before {
+    border-color: #e4e5f1 !important; }
+  body.light .tasks .task {
+    background-color: white;
+    border-bottom: 1px solid #d2d3db; }
+    body.light .tasks .task:hover p {
+      color: #393a4c;
+      font-weight: 700; }
+    body.light .tasks .task p {
+      color: #484b6a; }
+    body.light .tasks .task .check {
+      border-color: #e4e5f1 !important; }
+    body.light .tasks .task.active p {
+      color: #393a4c; }
+  body.light .dashboard {
+    background-color: white;
+    color: #9394a5; }
+
+/*# sourceMappingURL=style.css.map */

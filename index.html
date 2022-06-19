@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body class="dark">
+    <div class="background"></div>
+    <div class="todo">
+      <div class="container">
+        <div class="header flex justify-between items-center">
+          <h1>todo</h1>
+          <img src="./images/icon-sun.svg" alt="theme-switcher-icon" />
+        </div>
+        <form>
+          <input type="text" placeholder="Create a new todo..." />
+        </form>
+        <div class="tasks"></div>
+        <div class="dashboard flex justify-between items-center">
+          <p class="left-items">0 items left</p>
+          <div class="filters flex">
+            <button class="hover-white active">All</button>
+            <button class="hover-white">Active</button>
+            <button class="hover-white">Completed</button>
+          </div>
+          <button class="hover-white">Clear Completed</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
+
+<!-- <div class="task flex justify-between items-center">
+  <div class="check flex justify-center items-center">
+    <img src="./images/icon-check.svg" alt="check" />
+  </div>
+  <p>hello heheheha</p>
+  <div class="close">
+    <img src="./images/icon-cross.svg" alt="remove task" />
+  </div>
+</div> -->

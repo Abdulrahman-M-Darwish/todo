@@ -1,0 +1,45 @@
+body.dark {
+  background-color: $VeryDarkBlue;
+  .hover-white {
+    transition: 0.3s;
+    &:hover {
+      color: $LightGrayishBlue3;
+    }
+  }
+  .background {
+    background-image: url("../images/bg-mobile-dark.jpg");
+    @include minMedia(576) {
+      background-image: url("../images/bg-desktop-dark.jpg");
+    }
+  }
+  h1 {
+    color: white;
+  }
+  form {
+    input {
+      background-color: $VeryDarkDesaturatedBlue;
+      color: $LightGrayishBlue2;
+    }
+  }
+  .tasks {
+    .task {
+      background-color: $VeryDarkDesaturatedBlue;
+      border-bottom: 1px solid $VeryDarkGrayishBlue3;
+      &:hover p {
+        color: $LightGrayishBlue3;
+      }
+      p {
+        color: $LightGrayishBlue2;
+      }
+      &.active {
+        p {
+          color: $VeryDarkGrayishBlue3;
+        }
+      }
+    }
+  }
+  .dashboard {
+    background-color: $VeryDarkDesaturatedBlue;
+    color: $VeryDarkGrayishBlue2;
+  }
+}

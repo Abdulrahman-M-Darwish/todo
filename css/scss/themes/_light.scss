@@ -1,0 +1,52 @@
+body.light {
+  background-color: $VeryLightGray;
+  .hover-white {
+    transition: 0.3s;
+    &:hover {
+      color: $VeryDarkGrayishBlue1;
+    }
+  }
+  .background {
+    background-image: url("../images/bg-mobile-light.jpg");
+    @include minMedia(576) {
+      background-image: url("../images/bg-desktop-light.jpg");
+    }
+  }
+  h1 {
+    color: white;
+  }
+  form {
+    input {
+      background-color: white;
+      color: $VeryDarkGrayishBlue1;
+    }
+    &::before {
+      border-color: $VeryLightGrayishBlue !important;
+    }
+  }
+  .tasks {
+    .task {
+      background-color: white;
+      border-bottom: 1px solid $LightGrayishBlue1;
+      &:hover p {
+        color: $VeryDarkGrayishBlue3;
+        font-weight: 700;
+      }
+      p {
+        color: $VeryDarkGrayishBlue1;
+      }
+      .check {
+        border-color: $VeryLightGrayishBlue !important;
+      }
+      &.active {
+        p {
+          color: $VeryDarkGrayishBlue3;
+        }
+      }
+    }
+  }
+  .dashboard {
+    background-color: white;
+    color: $DarkGrayishBlue1;
+  }
+}
